@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    button {
+      height: 100px;
+      width: 100px;
+    }
+    .js-even {
+      background-color: blue;
+    }
+    .js-odd {
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <h3 id="greeting"></h3>
+  <button id="count" onclick="buttonPressed(); dogreeting('vishal');">0</button>
+
+  <script>
+    let count = Number(localStorage.getItem('count')) || 0;
+
+    function updateButton() {
+      let button = document.querySelector('#count');
+      if (count % 2 === 0) {
+        button.classList.remove('js-odd');
+        button.classList.add('js-even');
+      } else {
+        button.classList.remove('js-even');
+        button.classList.add('js-odd');
+      }
+      button.innerText = count;
+    }
+
+    function buttonPressed() {
+      count++;
+      localStorage.setItem('count', count);
+      updateButton();
+    }
+
+    function dogreeting(personName) {
+      const now = new Date();
+      const hours = now.getHours();
+      if (hours > 5 && hours < 12) {
+        document.querySelector('#greeting').innerText = `Good Morning ${personName}`;
+      } else if (hours >= 12 && hours < 17) {
+        document.querySelector('#greeting').innerText = `Good Afternoon ${personName}`;
+      } else {
+        document.querySelector('#greeting').innerText = `Good Night ${personName}`;
+      }
+    }
+
+    // Initialize on page load
+    updateButton();
+    dogreeting('vishal');
+  </script>
+</body>
+</html>
