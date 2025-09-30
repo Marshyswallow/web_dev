@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+      nav {
+        background-color: #f8f9fa;
+        padding: 10px;
+        display: flex;
+        gap: 40%;
+        background: linear-gradient(135deg, #ae8f90, #a097dd);
+      }
+      
+      nav img {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+      }
+      #busimg{
+        height: 200px;
+        width: 200px;
+        float: right;
+        margin-left: 15px;
+      }
+      .box{
+        margin: 40px auto;
+        border: solid black;
+        height: auto;
+        width: 50vw;
+        padding: 20px;
+        background: linear-gradient(135deg, #c7cccb, #a097dd);
+        border-radius: 8px;
+      }
+      label,input,select{
+        display: block;
+        margin: 8px 0;
+      }
+
+      
+  </style>
+</head>
+<body>
+
+    <nav>
+      <img src="javascript/bus_logo.jpg" alt="" />
+      <h1>Bus Seat Book</h1>
+    </nav>
+
+    <div class="box">
+      <center><h3>*Welcome To Bus Booking System*</h3></center>
+      <br>
+      <br>
+      <img id="busimg" src="javascript/bus_logo.jpg" alt="">
+      <h4>Select Seat Mode:</h4>
+      <br>
+      <br>
+      <label>AC</label>
+      <input type="checkbox" name="b">
+      <br>
+      <br>
+      <label> NON-AC</label>
+      <input type="checkbox" name="b">
+      <br>
+      <br>
+      <h4>Select Seat Mode:</h4>
+      <br>
+      <br>
+      <label>UPI</label>
+      <input type="radio" name="a">
+      <br><br>
+      <label>ATM</label>
+      <input type="radio" name="a">
+      <br><br>
+      <button>Thank out service</button>
+
+    </div>
+  
+  
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callback Hell Example</title>
+</head>
+<body>
+  <script>
+    function getData(data, nextCallback) {
+      setTimeout(() => {
+        console.log("Data:", data);
+        if (nextCallback) {
+          nextCallback();
+        }
+      }, 2000);
+    }
+
+    getData(1, () => {
+      getData(2, () => {
+        getData(3, () => {
+          getData(4, () => {
+            console.log("All data fetched ✅");
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

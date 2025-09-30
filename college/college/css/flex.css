@@ -1,0 +1,13 @@
+.vis{
+  display: block;
+  background-color: brown;
+  height: 30px;
+  width: 30px;
+  font-size: 30px;
+  padding: 20px;
+  margin: 20px;
+}
+.main{
+  display: flex;
+  flex-direction: column;
+}
